@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ka.p10prince'box — Class 10 Study Tracker</title>
+<meta name="theme-color" content="#1f3a5f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="p10 box">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f3a5f'/%3E%3Ctext x='32' y='43' font-size='28' text-anchor='middle' fill='%23d4a64a' font-family='Georgia'%3Ekp%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f5f1e8;--cd:#fffdf7;--tx:#1b2438;--mu:#6b7385;--bd:#e4ddcc;--ac:#1f3a5f;--gold:#b8892b;--on:#fff}
+[data-t=dark]{--bg:#0f131c;--cd:#181e2b;--tx:#e8e4d8;--mu:#99a0b3;--bd:#2b3347;--ac:#d4a64a;--gold:#d4a64a;--on:#10131b}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--tx);display:flex;min-height:100vh}
+nav{width:200px;background:var(--cd);border-right:1px solid var(--bd);padding:12px 10px;position:sticky;top:0;height:100vh;flex-shrink:0;overflow:auto}
+.brand{padding:6px 8px 14px;border-bottom:1px solid var(--bd);margin-bottom:8px}.brand b{display:block;font:700 17px Georgia,serif;color:var(--ac)}.brand small{color:var(--gold)}
+nav button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;margin:2px 0;border:0;background:none;padding:8px 10px}nav button span{font-size:18px}nav button em{font-style:normal}
+nav button.on{background:var(--ac);color:var(--on)}
+main{flex:1;padding:18px;min-width:0;max-width:1000px;margin:0 auto}
+button,input,select,textarea{font:inherit;color:var(--tx);background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:6px 10px}
+button{cursor:pointer}button.pri{background:var(--ac);color:var(--on);border-color:var(--ac)}button.sm{padding:2px 8px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);outline-offset:0}
+textarea{width:100%;min-height:56px}input[type=checkbox]{width:auto;margin-right:6px;accent-color:var(--ac)}input{max-width:100%}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:10px 12px;margin:8px 0;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}.g .card{margin:0}
+.hero{background:linear-gradient(135deg,#14243d,#1f3a5f);color:#f3e3b5;border-radius:16px;padding:12px 16px;margin:8px 0}.hero .big{color:#fff}
+.row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.grow{flex:1;min-width:140px}
+.chk{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:6px 0}
+.bar{height:9px;background:var(--bd);border-radius:6px;overflow:hidden;margin:4px 0}.bar i{display:block;height:100%;border-radius:6px}
+.big{font:700 26px Georgia,serif}.mu{color:var(--mu)}h2{font:700 24px Georgia,serif;margin:4px 0 10px;color:var(--ac)}h3{font:700 17px Georgia,serif;margin:16px 0 4px;color:var(--gold)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.cal div{padding:9px 0;text-align:center;border-radius:10px;cursor:pointer;border:1px solid var(--bd)}
+.full{background:#2f855a;color:#fff}.part{background:#e9c46a;color:#222}.no{background:#e9a5a0;color:#222}.fu{opacity:.45}.tdy{outline:3px solid var(--gold)}
+.chip{display:inline-block;padding:2px 10px;margin:2px;border-radius:12px;background:var(--bd);cursor:pointer;font-size:13px}
+.tbar{background:var(--ac);color:var(--on);border-radius:12px;padding:8px 12px;margin-bottom:8px;cursor:pointer;font-weight:600}
+footer{text-align:center;color:var(--mu);font-size:12px;margin:26px 0 8px}
+table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid var(--bd);padding:4px;text-align:left;vertical-align:top}
+.g2{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.g2 .card{margin:0}.s3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}.s3 .card{margin:0;padding:8px 10px}.s3 .big{font-size:19px}
+.ch{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:8px 10px;margin:6px 0}.cks{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0 2px}.ck{cursor:pointer}.ck input{display:none}
+.ck span{display:inline-block;padding:3px 9px;border-radius:14px;border:1px solid var(--bd);font-size:12.5px}.ck input:checked+span{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.gh{display:flex;gap:4px;align-items:center;margin:12px 0 2px;color:var(--gold);font:700 16px Georgia,serif}.gh .grow{cursor:pointer}
+#splash{position:fixed;inset:0;z-index:99;background:linear-gradient(135deg,#14243d,#1f3a5f);color:#f3e3b5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:bye .6s 2.4s forwards}
+#splash h1{font:700 clamp(26px,8vw,46px) Georgia,serif;margin:0;animation:rise 1s ease both}#splash i{display:block;width:0;height:2px;background:#d4a64a;margin:14px 0;animation:grow 1.2s .5s ease forwards}
+#splash p{margin:0;opacity:0;animation:rise 1s .9s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}@keyframes grow{to{width:150px}}@keyframes bye{to{opacity:0;visibility:hidden}}
+@media(max-width:760px){.g2{grid-template-columns:repeat(2,1fr)}main{padding:10px 10px 90px}nav{position:fixed;bottom:0;left:0;right:0;top:auto;width:100%;height:auto;display:flex;overflow-x:auto;gap:2px;padding:4px 4px calc(4px + env(safe-area-inset-bottom));z-index:20;border-right:0;border-top:1px solid var(--bd)}
+.brand{display:none}nav button{flex-direction:column;gap:0;width:auto;min-width:62px;padding:4px 6px;text-align:center;margin:0}nav button em{font-size:11px;white-space:nowrap}}
+</style></head><body><div id="splash"><h1>ka.p10prince'box</h1><i></i><p>by ka.p10 · Class 10 Study Companion</p></div><nav></nav><main></main>
+<noscript><h2 style='padding:20px'>JavaScript band hai. Is file ko Chrome me kholo.</h2></noscript>
+<script>
+window.onerror=function(m,u,l){var e=document.createElement('pre');e.style.cssText='color:red;white-space:pre-wrap;padding:10px';e.textContent='Error: '+m+' (line '+l+')';document.body.appendChild(e)};
+const S=[{k:'m',n:'Maths (Standard)',c:'#1d4ed8'},{k:'s',n:'Science',c:'#15803d'},{k:'ss',n:'Social Science',c:'#c2410c'},{k:'e',n:'English',c:'#7e22ce'},{k:'h',n:'Hindi A',c:'#b91c1c'},{k:'ai',n:'AI (417)',c:'#0f766e'}];
+const CK=['Lecture','NCERT / Book Reading','Notes / Concepts','Question Practice','Revision','Chapter Test'];
+const MT=['Conceptual','Formula','Calculation','Memory','Question misunderstood','Time management'];
+// Source: uploaded CBSE Class 10 2026-27 syllabus PDF. Everything is editable in the app.
+const SEED={m:{'Mathematics (Standard) – NCERT Chapters':['1. Real Numbers','2. Polynomials','3. Pair of Linear Equations in Two Variables','4. Quadratic Equations','5. Arithmetic Progressions','6. Triangles','7. Coordinate Geometry','8. Introduction to Trigonometry','9. Some Applications of Trigonometry','10. Circles','11. Areas Related to Circles','12. Surface Areas and Volumes','13. Statistics','14. Probability']},
+s:{'Chemistry':['1. Chemical Reactions and Equations','2. Acids, Bases and Salts','3. Metals and Non-metals','4. Carbon and its Compounds'],'Biology':['5. Life Processes','6. Control and Coordination','7. How do Organisms Reproduce?','8. Heredity','13. Our Environment'],'Physics':['9. Light – Reflection and Refraction','10. The Human Eye and the Colourful World','11. Electricity','12. Magnetic Effects of Electric Current']},
+ss:{'History':['1. The Rise of Nationalism in Europe','2. Nationalism in India','3. The Making of a Global World (Board: sub-topics 1–1.3 only)','4. The Age of Industrialization (Internal Assessment only)','5. Print Culture and the Modern World'],'Geography':['1. Resources and Development','2. Forest and Wildlife Resources','3. Water Resources','4. Agriculture','5. Minerals and Energy Resources','6. Manufacturing Industries','7. Lifelines of National Economy (Map pointing only)'],'Political Science / Civics':['1. Power-sharing','2. Federalism','3. Gender, Religion and Caste','4. Political Parties','5. Outcomes of Democracy'],'Economics':['1. Development','2. Sectors of the Indian Economy','3. Money and Credit','4. Globalisation and the Indian Economy (Board: What is Globalisation + Factors only)','5. Consumer Rights (Project Work only)']},
+e:{'First Flight – Prose':['A Letter to God','Nelson Mandela: Long Walk to Freedom','Two Stories About Flying (His First Flight / Black Aeroplane)','From the Diary of Anne Frank','Glimpses of India (A Baker from Goa / Coorg / Tea from Assam)','Mijbil the Otter','Madam Rides the Bus','The Sermon at Benares','The Proposal (Play)'],'First Flight – Poems':['Dust of Snow','Fire and Ice','A Tiger in the Zoo','How to Tell Wild Animals','The Ball Poem','Amanda!','The Trees','Fog','The Tale of Custard the Dragon','For Anne Gregory'],'Footprints Without Feet':['A Triumph of Surgery','The Thief\'s Story','The Midnight Visitor','A Question of Trust','Footprints Without Feet','The Making of a Scientist','The Necklace','Bholi','The Book That Saved the Earth'],'Reading / Writing / Grammar':['Reading Comprehension (2 passages)','Grammar (Determiners, Tenses, Modals, Subject-Verb Concord, Reported Speech)','Formal Letter','Analytical Paragraph']},
+h:{'Kshitij Bhag-2 – Kaavya (Poetry)':['1. Surdas – Pad','2. Tulsidas – Ram-Lakshman-Parshuram Samvad','3. Jaishankar Prasad – Aatmkathya','4. Nirala – Utsaah, At Nahi Rahi Hai','5. Nagarjun – Yeh Danturit Muskaan, Fasal','6. Manglesh Dabral – Sangatkar'],'Kshitij Bhag-2 – Gadya (Prose)':['7. Swayam Prakash – Netaji Ka Chashma','8. Rambriksh Benipuri – Balgobin Bhagat','9. Yashpal – Lakhnavi Andaaz','10. Mannu Bhandari – Ek Kahani Yeh Bhi','11. Yatindra Mishra – Naubatkhane Mein Ibadat','12. Bhadant Anand Kausalyayan – Sanskriti'],'Kritika Bhag-2':['1. Mata Ka Aanchal','2. Sana-Sana Hath Jodi','3. Main Kyon Likhta Hoon?'],'Vyakaran (Grammar) & Apathit':['Apathit Gadyansh (Unseen Passage)','Vakya Bhed (Rachna ke aadhar par)','Vachya','Pad Parichay','Alankar (Shlesh, Utpreksha, Atishayokti, Manavikaran)'],'Lekhan (Writing)':['Anuchchhed Lekhan','Patra Lekhan (Formal/Informal)','Swavritt (Bio-data) / E-mail Lekhan','Vigyapan Lekhan / Sandesh Lekhan']},
+ai:{'Part A – Employability Skills':['Unit 1: Communication Skills-II','Unit 2: Self-Management Skills-II','Unit 3: ICT Skills-II','Unit 4: Entrepreneurial Skills-II','Unit 5: Green Skills-II'],'Part B – Subject Specific Skills':['Unit 1: Revisiting AI Project Cycle & Ethical Frameworks for AI','Unit 2: Advanced Concepts of Modeling in AI','Unit 3: Evaluating Models','Unit 4: Statistical Data','Unit 5: Computer Vision','Unit 6: Natural Language Processing','Unit 7: Advance Python'],'Part C – Practical & Project':['Practical File (minimum 15 programs)','Practical Exam (Statistical Data, Computer Vision, NLP, Advance Python)','Viva Voce','Project Work / Field Visit / Student Portfolio','Viva Voce (project related)']}};
+const KEY='cbse10tracker_v1';
+const p2=n=>String(n).padStart(2,'0'),fmt=d=>d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate()),today=()=>fmt(new Date());
+const pd=s=>{const a=s.split('-').map(Number);return new Date(a[0],a[1]-1,a[2])};
+const diff=(a,b)=>{const x=pd(a),y=pd(b);return Math.round((Date.UTC(y.getFullYear(),y.getMonth(),y.getDate())-Date.UTC(x.getFullYear(),x.getMonth(),x.getDate()))/864e5)};
+const addD=(s,n)=>{const d=pd(s);d.setDate(d.getDate()+n);return fmt(d)};
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=s=>document.querySelector(s),sub=k=>S.find(x=>x.k===k);
+const DAYN=['Ravivar (Sunday)','Somvar (Monday)','Mangalvar (Tuesday)','Budhvar (Wednesday)','Guruvar (Thursday)','Shukravar (Friday)','Shanivar (Saturday)'];
+function seed(){return mig(seed0())}
+function seed0(){const ch=[];for(const k in SEED)for(const g in SEED[k])SEED[k][g].forEach(n=>ch.push({s:k,g,n,c:[0,0,0,0,0,0],note:'',how:''}));
+return{start:'2026-11-11',nov:'2026-11-30',dec:'2026-12-31',ch,d:{},t:{nov:{m:90,s:75,ss:60,e:45,h:45,r:30},dec:{m:75,s:75,ss:60,e:45,h:45,r:30}},mk:[],goals:[],rv:{},th:'light'}}
+const DS=()=>[{n:'Mathematics (Standard & Basic)',d:'2027-02-17'},{n:'Science',d:'2027-02-22'},{n:'Computer Science / IT / AI',d:'2027-02-24'},{n:'English',d:'2027-02-26'},{n:'Sanskrit',d:'2027-03-01'},{n:'Hindi',d:'2027-03-03'},{n:'Social Science (SST)',d:'2027-03-08'}];
+const SP=()=>{const a=[];S.forEach(s=>{for(let i=1;i<=(s.k==='ai'?2:4);i++)a.push({s:s.k,n:'Sample Paper '+i,a:0,r:0,sc:''})});return a};
+function mig(x){x.t=x.t||{};x.t.nov=x.t.nov||{};x.t.dec=x.t.dec||{};if(!x.t.jan)x.t.jan=Object.assign({},x.t.dec);['nov','dec','jan'].forEach(k=>{if(x.t[k].ai==null)x.t[k].ai=0});if(!x.ds)x.ds=DS();if(!x.sp)x.sp=SP();if(!x.tm)x.tm={k:'m',len:25,end:0,left:1500};if(!x.aiOK){x.aiOK=1;if(!x.ch.some(c=>c.s==='ai'))for(const g in SEED.ai)SEED.ai[g].forEach(n=>x.ch.push({s:'ai',g,n,c:[0,0,0,0,0,0],note:'',how:''}))}return x}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.ch&&x.d)return mig(x)}catch(e){}return seed()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){alert('Save nahi ho paya (storage blocked/full). Backup export karo.')}}
+let db=load(),lastView='',view='dash',sel=today(),fl='',inc=0,cs='m',mf={s:'',c:''},calD=new Date(),lastDay=today();
+const pct=c=>Math.round(c.c.filter(Boolean).length/6*100);
+function getP(p){return p.split('/').reduce((o,k)=>o==null?o:o[k],db)}
+function setP(p,v){const a=p.split('/');let o=db;for(let i=0;i<a.length-1;i++){if(o[a[i]]==null)o[a[i]]={};o=o[a[i]]}o[a[a.length-1]]=v}
+const tg=d=>d<'2026-12'?db.t.nov:d<'2027-01'?db.t.dec:db.t.jan;
+const tsum=d=>Object.values(tg(d)).reduce((a,b)=>a+(+b||0),0);
+const sact=s=>s&&(s.t>0||s.nq>0||s.l||s.n||s.q||s.r||(s.ch&&s.ch.trim())||(s.tp&&s.tp.trim()));
+const smin=(d,k)=>+((((db.d[d]||{}).s||{})[k]||{}).t)||0;
+function mins(d){const x=db.d[d];if(!x)return 0;return S.reduce((a,s)=>a+smin(d,s.k),0)+(+x.rev||0)}
+function act(d){const x=db.d[d];return !!x&&(S.some(s=>sact((x.s||{})[s.k]))||+x.rev>0||(x.n&&x.n.trim()))}
+function status(d){const t=today();if(d>t)return'fu';if(!act(d))return d===t?'':'no';return mins(d)>=tsum(d)?'full':'part'}
+function streak(){let d=today(),n=0;if(!act(d))d=addD(d,-1);while(d>=db.start&&act(d)){n++;d=addD(d,-1)}return n}
+function lastStudy(k){let r='';for(const d in db.d)if(sact((db.d[d].s||{})[k])&&d>r)r=d;return r}
+function bar(p,c){return`<div class=bar><i style="width:${Math.min(100,p)}%;background:${c||'var(--ac)'}"></i></div>`}
+function go(v){view=v;render()}
+function dl(n,t,m){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:m||'text/plain'}));a.download=n;document.body.appendChild(a);a.click();a.remove()}
+document.addEventListener('input',h);document.addEventListener('change',h);
+function h(e){const t=e.target,p=t.dataset&&t.dataset.p;if(!p)return;if(t.type==='checkbox'&&e.type==='input')return;
+setP(p,t.type==='checkbox'?(t.checked?1:0):t.type==='number'?(+t.value||0):t.value);save();if(t.dataset.rr)render()}
+const NAV=[['dash','🏠','Home'],['ch','📚','Chapters'],['diary','📝','Diary'],['cal','📅','Calendar'],['sp','🧪','Jan Papers'],['ds','🗓','Date Sheet'],['ana','📊','Analytics'],['week','🔁','Weekly'],['mk','❌','Mistakes'],['tm','⏱','Timer'],['plan','🎯','Targets'],['bk','💾','Backup']];
+function render(){document.documentElement.dataset.t=db.th;
+$('nav').innerHTML="<div class=brand><b>ka.p10prince'box</b><small>by ka.p10</small></div>"+NAV.map(n=>`<button class="${view===n[0]?'on':''}" onclick="go('${n[0]}')"><span>${n[1]}</span><em>${n[2]}</em></button>`).join('')+`<button onclick="db.th=db.th=='dark'?'light':'dark';save();render()"><span>🌓</span><em>Theme</em></button>`;
+$('main').innerHTML=(db.tm.end?`<div class=tbar onclick="go('tm')">⏱ <span id=tmb>${tmS()}</span> — focus timer chal raha hai</div>`:'')+V[view]()+"<footer>ka.p10prince'box · by ka.p10</footer>";if(view!==lastView){window.scrollTo(0,0);lastView=view}}
+const V={};
+V.dash=()=>{const t=today(),el=diff(db.start,t),tot=db.ch.length||1,all=Math.round(db.ch.reduce((a,c)=>a+pct(c),0)/tot),tm=mins(t),tt=tsum(t),T=tg(t);
+let wk=0;for(let i=0;i<7;i++)wk+=mins(addD(t,-i));
+const f3=db.ch.filter(c=>c.c[0]&&c.c[1]&&c.c[2]).length/tot,e1=Math.max(0,Math.min(1,(el+1)/(diff(db.start,db.nov)+1))),f4=db.ch.filter(c=>c.c[3]&&c.c[4]).length/tot,d1=addD(db.nov,1),e2=Math.max(0,Math.min(1,(diff(d1,t)+1)/(diff(d1,db.dec)+1)));
+const pend=db.ch.filter(c=>pct(c)<100),due=db.ch.filter(c=>c.c[0]&&c.c[1]&&c.c[2]&&!c.c[4]),st=(l,v)=>`<div class=card><small class=mu>${l}</small><div class=big>${v}</div></div>`;
+return`<div class=hero><div class=big id=clk></div><span>${el<0?'Study start mein '+(-el)+' din baaki':'Din '+(el+1)+' — start ke '+el+' din ho gaye'}</span></div>
+<div class=g2>${S.map(s=>{const cc=db.ch.filter(c=>c.s===s.k),p=Math.round(cc.reduce((a,c)=>a+pct(c),0)/(cc.length||1));return`<div class=card onclick="cs='${s.k}';go('ch')" style="cursor:pointer;border-top:4px solid ${s.c}"><b style="color:${s.c}">${s.n}</b><div class=big>${p}%</div>${bar(p,s.c)}<small class=mu>${cc.filter(c=>pct(c)<100).length} baaki · chapters ›</small></div>`}).join('')}</div>
+${nx()}<div class=s3>${st('30 Nov tak',Math.max(0,diff(t,db.nov))+' din')}${st('31 Dec tak',Math.max(0,diff(t,db.dec))+' din')}${st('Aaj',(tt?Math.min(100,Math.round(tm/tt*100)):0)+'%')}${st('Syllabus',all+'%')}${st('Is hafte',(wk/60).toFixed(1)+'h')}${st('Lagatar din',streak())}</div>
+<h3>Prep Journey</h3><div class=card>${journey()}</div>
+<h3>Aaj kya karna hai?</h3><div class=card>${S.map(s=>{if(!T[s.k])return'';const r=Math.max(0,T[s.k]-smin(t,s.k));return`<div style="color:${s.c}"><b>${s.n}</b>: ${r?r+' min baaki (target '+T[s.k]+')':'✅ target poora'}</div>`}).join('')}<div><b>Revision / Mistake notebook</b>: ${Math.max(0,T.r-(+((db.d[t]||{}).rev)||0))} min baaki</div><br><button class=pri onclick="sel=today();go('diary')">Aaj ki diary kholo</button></div>
+<h3>My Preparation Status</h3><div class=card>🗓 30 Nov: Lecture+Reading+Notes ${Math.round(f3*100)}% (ab tak ~${Math.round(e1*100)}% hona chahiye) — ${f3>=e1-.05?'<b>On track ✅</b>':'thoda peeche, aaj se pakad sakte ho 💪'}<br>📝 December: practice+revision ${Math.round(f4*100)}% ${db.nov<t?'(expected ~'+Math.round(e2*100)+'%)':'(Dec 1 se shuru)'}</div>
+<h3>Revision due (${due.length}) · Pending (${pend.length})</h3><div class=card>${due.slice(0,8).map(c=>`<span class=chip>🔁 ${esc(c.n)}</span>`).join('')}${pend.slice(0,8).map(c=>`<span class=chip style="border-left:4px solid ${sub(c.s).c}">${esc(c.n)} ${pct(c)}%</span>`).join('')||'<span class=mu>—</span>'}</div>`};
+setInterval(()=>{tmTick();const e=$('#clk');const n=new Date();if(today()!==lastDay){lastDay=today();if(sel<lastDay&&view==='dash')sel=lastDay;render();return}
+if(e)e.textContent=DAYN[n.getDay()]+', '+n.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})+' — '+n.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})},1000);
+// ---- chapters
+let ex={},col={},GS=[];const CKS=['Lecture','NCERT','Notes','Practice','Revision','Test'];
+const card=(c,i)=>{const p=pct(c),s=sub(c.s),o=ex[i];return`<div class=ch style="border-left:4px solid ${s.c}"><div class=row><input class=grow data-p="ch/${i}/n" value="${esc(c.n)}"><b style="color:${s.c}">${c.c.filter(Boolean).length}/6 · ${p}%</b><button class=sm onclick="ex[${i}]=!ex[${i}];render()">${o?'▴':'▾'}</button></div><div class=cks>${CK.map((l,j)=>`<label class=ck title="${l}"><input type=checkbox data-rr=1 data-p="ch/${i}/c/${j}" ${c.c[j]?'checked':''}><span>${CKS[j]}</span></label>`).join('')}</div>${bar(p,s.c)}${o?`<input style="width:100%;margin:4px 0" data-p="ch/${i}/how" placeholder="Kitna chapter hua (jaise 70%, Ex 1.2 baaki)" value="${esc(c.how)}"><textarea data-p="ch/${i}/note" placeholder="Notes">${esc(c.note)}</textarea><button class=sm onclick="delCh(${i})">🗑 Chapter delete</button>`:''}</div>`};
+function tgl(gi){const k=cs+'|'+GS[gi];col[k]=!col[k];rl()}
+V.ch=()=>{const gs=[...new Set(db.ch.filter(c=>c.s===cs).map(c=>c.g))];
+return`<h2>Chapter Tracker</h2><div class=row>${S.map(s=>`<button class="${cs===s.k?'on':''}" onclick="cs='${s.k}';render()">${s.n}</button>`).join('')}</div>
+<div class=row style="margin:8px 0"><input class=grow placeholder="🔍 Chapter search" value="${esc(fl)}" oninput="fl=this.value;rl()"><label><input type=checkbox ${inc?'checked':''} onchange="inc=this.checked?1:0;rl()">Sirf incomplete</label><button onclick="addG('${cs}')">+ Naya section/group</button></div>
+<small class=mu>Syllabus: uploaded CBSE 2026-27 PDF se. Har naam edit/delete/add kar sakte ho.</small><div id=gl>${gl(gs)}</div>`};
+function gl(gs){GS=gs;return gs.map((g,gi)=>{const q=JSON.stringify(g).replace(/"/g,'&quot;'),all=db.ch.map((c,i)=>[c,i]).filter(([c])=>c.s===cs&&c.g===g),av=Math.round(all.reduce((a,[c])=>a+pct(c),0)/(all.length||1)),items=all.filter(([c])=>(!fl||c.n.toLowerCase().includes(fl.toLowerCase()))&&(!inc||pct(c)<100)),shut=col[cs+'|'+g];
+return`<div class=gh><span class=grow onclick="tgl(${gi})">${shut?'▸':'▾'} ${esc(g)} <small class=mu>${av}% · ${all.length}</small></span><button class=sm onclick="renG('${cs}',${q})">✏️</button><button class=sm onclick="delG('${cs}',${q})">🗑</button><button class=sm onclick="addCh('${cs}',${q})">＋</button></div>${shut?'':items.map(([c,i])=>card(c,i)).join('')||'<small class=mu>Kuch nahi mila</small>'}`}).join('')}
+function rl(){$('#gl').innerHTML=gl([...new Set(db.ch.filter(c=>c.s===cs).map(c=>c.g))])}
+function addCh(k,g){const n=prompt('Chapter ka naam:');if(n){db.ch.push({s:k,g,n,c:[0,0,0,0,0,0],note:'',how:''});save();render()}}
+function addG(k){const g=prompt('Naye section ka naam (jaise "Extra Practice"):');if(g){const n=prompt('Pehle chapter ka naam:');if(n){db.ch.push({s:k,g,n,c:[0,0,0,0,0,0],note:'',how:''});save();render()}}}
+function renG(k,g){const n=prompt('Section ka naya naam:',g);if(n){db.ch.forEach(c=>{if(c.s===k&&c.g===g)c.g=n});save();render()}}
+function delG(k,g){if(confirm('Is section ke SAARE chapters aur unka progress delete ho jayega. Pakka?')){db.ch=db.ch.filter(c=>!(c.s===k&&c.g===g));save();render()}}
+function delCh(i){if(confirm('Ye chapter delete karein? Progress bhi jayega.')){db.ch.splice(i,1);ex={};save();render()}}
+// ---- diary
+const F=(d,k,key,type,lab)=>{const v=(((db.d[d]||{}).s||{})[k]||{})[key],p=`d/${d}/s/${k}/${key}`;
+if(type==='cb')return`<label><input type=checkbox data-p="${p}" ${v?'checked':''}>${lab}</label>`;
+if(type==='ta')return`<div><small>${lab}</small><textarea data-p="${p}">${esc(v)}</textarea></div>`;
+return`<label><small>${lab}</small><br><input type=${type==='n'?'number':'text'} ${type==='n'?'min=0':''} ${key==='ch'?`list="dl_${k}"`:''} data-p="${p}" value="${esc(v)}"></label>`};
+V.diary=()=>{const d=sel,T=tg(d),x=db.d[d]||{};
+return`<h2>Daily Diary</h2><div class=row><button onclick="sel=addD(sel,-1);render()">◀</button><input type=date value="${d}" onchange="if(this.value){sel=this.value;render()}"><button onclick="sel=addD(sel,1);render()">▶</button><button onclick="sel=today();render()">Aaj</button><b>${DAYN[pd(d).getDay()]}</b></div>
+<small class=mu>Target aaj: ${tsum(d)} min | Hua: ${mins(d)} min | Sab kuch automatically save hota hai (is date ke naam se).</small>
+${S.map(s=>{const cc=db.ch.filter(c=>c.s===s.k);return`<div class=card style="border-top:4px solid ${s.c}"><b style="color:${s.c}">${s.n}</b> <small class=mu>(target ${T[s.k]} min)</small><datalist id="dl_${s.k}">${cc.map(c=>`<option value="${esc(c.n)}">`).join('')}</datalist>
+<div class=row>${F(d,s.k,'ch','t','Chapter')}${F(d,s.k,'tp','t','Topic studied')}${F(d,s.k,'nq','n','Questions solved')}${F(d,s.k,'t','n','Time spent (min)')}</div>
+<div class=chk>${F(d,s.k,'l','cb','Lecture')}${F(d,s.k,'n','cb','NCERT reading')}${F(d,s.k,'q','cb','Question practice')}${F(d,s.k,'r','cb','Revision')}</div>
+${F(d,s.k,'u','ta','Kya samajh aaya (What I understood)')}${F(d,s.k,'x','ta','Kya samajh nahi aaya')}${F(d,s.k,'p','ta','Kya baaki hai (Pending)')}</div>`}).join('')}
+<div class=card><b>Revision / Mistake notebook time (min)</b> <input type=number min=0 data-p="d/${d}/rev" value="${+x.rev||''}"> <small class=mu>target ${T.r}</small> &nbsp; <b>Focus timer min</b>: ${+x.focus||0}<div><small>General daily notes</small><textarea data-p="d/${d}/n">${esc(x.n)}</textarea></div>
+<button onclick="dl('report_'+sel+'.txt',rep(sel))">⬇ Is din ki report</button> <button onclick="clrDay()">🗑 Is din ka data delete</button></div>`};
+function clrDay(){if(confirm(sel+' ka poora data delete ho jayega. Pakka?')){delete db.d[sel];save();render()}}
+function rep(d){const x=db.d[d]||{s:{}};let r=`Study Report — ${d} (${DAYN[pd(d).getDay()]})\nTotal: ${mins(d)} min / target ${tsum(d)}\n\n`;S.forEach(s=>{const y=(x.s||{})[s.k]||{};r+=`== ${s.n} ==\nChapter: ${y.ch||'-'} | Topic: ${y.tp||'-'}\nLecture:${y.l?'Y':'N'} NCERT:${y.n?'Y':'N'} Practice:${y.q?'Y':'N'} Revision:${y.r?'Y':'N'} | Questions:${y.nq||0} | Time:${y.t||0} min\nSamjha: ${y.u||'-'}\nNahi samjha: ${y.x||'-'}\nPending: ${y.p||'-'}\n\n`});return r+`Revision min: ${x.rev||0}\nNotes: ${x.n||'-'}\n`}
+// ---- calendar
+V.cal=()=>{const y=calD.getFullYear(),m=calD.getMonth(),first=new Date(y,m,1),off=(first.getDay()+6)%7,n=new Date(y,m+1,0).getDate();let c='',ms=0,mq=0,dd=0;
+['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(x=>c+=`<small class=mu style="text-align:center">${x}</small>`);for(let i=0;i<off;i++)c+='<span></span>';
+for(let i=1;i<=n;i++){const d=y+'-'+p2(m+1)+'-'+p2(i),st=status(d);if(act(d)){dd++;ms+=mins(d);S.forEach(s=>mq+=+((((db.d[d]||{}).s||{})[s.k]||{}).nq)||0)}
+c+=`<div class="${st} ${d===today()?'tdy':''}" onclick="sel='${d}';go('diary')">${i}</div>`}
+return`<h2>Calendar</h2><div class=row><button onclick="calD=new Date(${y},${m-1},1);render()">◀</button><b>${calD.toLocaleDateString('en-IN',{month:'long',year:'numeric'})}</b><button onclick="calD=new Date(${y},${m+1},1);render()">▶</button></div>
+<div class=cal style="margin:8px 0">${c}</div><span class="chip full">Poora target</span><span class="chip part">Aadha/kuch</span><span class="chip no">Koi record nahi</span><span class="chip fu">Future</span>
+<div class=card>Is mahine: ${dd} din study, ${(ms/60).toFixed(1)} hrs, ${mq} questions</div>`};
+// ---- analytics
+V.ana=()=>{const tot=db.ch.length||1,cnt=j=>Math.round(db.ch.filter(c=>c.c[j]).length/tot*100),full=db.ch.filter(c=>pct(c)===100).length,none=db.ch.filter(c=>pct(c)===0).length;let q=0,mn=0;for(const d in db.d){mn+=mins(d);S.forEach(s=>q+=+((((db.d[d]||{}).s||{})[s.k]||{}).nq)||0)}
+const t=today(),days=[...Array(14)].map((_,i)=>addD(t,i-13)),mx=Math.max(60,...days.map(mins)),miss=[];for(let d=db.start;d<t;d=addD(d,1))if(!act(d))miss.push(d);
+return`<h2>Analytics</h2><div class=g><div class=card>Total chapters<div class=big>${db.ch.length}</div></div><div class=card>Poore complete<div class=big>${full}</div></div><div class=card>Adhure<div class=big>${db.ch.length-full-none}</div></div><div class=card>Pending (0%)<div class=big>${none}</div></div><div class=card>Questions solved<div class=big>${q}</div></div><div class=card>Study hours<div class=big>${(mn/60).toFixed(1)}</div></div></div>
+<h3>Kaam ke hisaab se</h3><div class=card>${CK.map((l,j)=>`${l}: ${cnt(j)}%${bar(cnt(j))}`).join('')}</div>
+<h3>Subject-wise</h3><div class=card>${S.map(s=>{const cc=db.ch.filter(c=>c.s===s.k),p=Math.round(cc.reduce((a,c)=>a+pct(c),0)/(cc.length||1)),ls=lastStudy(s.k);return`<b style="color:${s.c}">${s.n}</b> — ${p}% | last studied: ${ls||'abhi tak nahi'}${bar(p,s.c)}`}).join('')}</div>
+<h3>Pichhle 14 din (minutes)</h3><div class=card><div style="display:flex;align-items:flex-end;gap:3px;height:110px">${days.map(d=>`<div title="${d}: ${mins(d)} min" onclick="sel='${d}';go('diary')" style="flex:1;cursor:pointer;background:var(--ac);height:${Math.max(2,mins(d)/mx*100)}%"></div>`).join('')}</div></div>
+<h3>Bina entry wali dates (${miss.length})</h3><div class=card>${miss.map(d=>`<span class=chip onclick="sel='${d}';go('diary')">${d.slice(5)}</span>`).join('')||'Koi nahi 🎉'}<br><small class=mu>Ye sirf jaankari hai — jahan se chaho wapas shuru karo.</small></div>
+<h3>Complete chapters</h3><div class=card>${db.ch.filter(c=>pct(c)===100).map(c=>`<span class=chip>${esc(c.n)}</span>`).join('')||'—'}</div>`};
+// ---- weekly
+V.week=()=>{const t=today(),days=[...Array(7)].map((_,i)=>addD(t,i-6)),T=tg(t);let q=0,tm=0;const sm={};S.forEach(s=>sm[s.k]=0);
+days.forEach(d=>{tm+=mins(d);S.forEach(s=>{sm[s.k]+=smin(d,s.k);q+=+((((db.d[d]||{}).s||{})[s.k]||{}).nq)||0})});
+const wd=pd(t),mon=addD(t,-((wd.getDay()+6)%7)),R=db.rv[mon]||{},mk=db.mk.filter(m=>m.d>=days[0]),tc={};mk.forEach(m=>tc[m.t]=(tc[m.t]||0)+1);
+return`<h2>Weekly Review</h2>${wd.getDay()===0?'<div class=card>🗓 <b>Aaj Sunday hai — weekly review likhne ka din!</b></div>':''}<div class=card>Pichhle 7 din (${days[0]} → ${t}): <b>${(tm/60).toFixed(1)} hrs</b>, <b>${q}</b> questions</div>
+<div class=card>${S.map(s=>{const goal=T[s.k]*7;if(!goal)return'';const p=Math.round(sm[s.k]/goal*100);return`<b style="color:${s.c}">${s.n}</b>: ${sm[s.k]}/${goal} min — ${p>=70?'✅ kaafi dhyaan mila':'⚠ kam dhyaan mila → agle hafte +'+Math.ceil((goal-sm[s.k])/7/5)*5+' min/din'}${bar(p,s.c)}`}).join('')}</div>
+<div class=card><b>Baar-baar hui galtiyan:</b> ${Object.entries(tc).map(([k,v])=>`${k} ×${v}`).join(', ')||'Mistake notebook me entries nahi'}</div>
+<div class=card><b>Pending chapters:</b> ${db.ch.filter(c=>pct(c)<100).length} | <b>Complete:</b> ${db.ch.filter(c=>pct(c)===100).length}<br><small class=mu>Note: chapter kis din complete hua ye app track nahi karta; Diary me likho.</small></div>
+<div class=card><b>Meri reflection</b><small>Kya acha gaya</small><textarea data-p="rv/${mon}/g">${esc(R.g)}</textarea><small>Kya mushkil tha</small><textarea data-p="rv/${mon}/h">${esc(R.h)}</textarea><small>Agle hafte ka plan</small><textarea data-p="rv/${mon}/p">${esc(R.p)}</textarea></div>`};
+// ---- mistakes
+V.mk=()=>{const list=db.mk.map((m,i)=>[m,i]).filter(([m])=>(!mf.s||m.s===mf.s)&&(!mf.c||(m.c||'').toLowerCase().includes(mf.c.toLowerCase())));
+return`<h2>Mistake Notebook</h2><div class=card><div class=row><input type=date id=md value="${today()}"><select id=ms>${S.map(s=>`<option value="${s.k}">${s.n}</option>`).join('')}</select><input id=mc class=grow placeholder="Chapter"><select id=mt>${MT.map(x=>`<option>${x}</option>`).join('')}</select></div>
+<textarea id=mq placeholder="Question / topic"></textarea><textarea id=me placeholder="Sahi explanation"></textarea><button class=pri onclick="addMk()">+ Add</button></div>
+<div class=row><select onchange="mf.s=this.value;render()"><option value="">Saare subjects</option>${S.map(s=>`<option value="${s.k}" ${mf.s===s.k?'selected':''}>${s.n}</option>`).join('')}</select><input placeholder="Chapter filter" value="${esc(mf.c)}" oninput="mf.c=this.value" onchange="render()"></div>
+${list.map(([m,i])=>`<div class=card style="border-left:4px solid ${sub(m.s).c}"><div class=row><b>${m.d}</b> ${sub(m.s).n} · ${esc(m.c)} · <i>${m.t}</i><select class=grow data-p="mk/${i}/st">${['Pending','Reattempted','Mastered'].map(x=>`<option ${m.st===x?'selected':''}>${x}</option>`).join('')}</select><button class=sm onclick="if(confirm('Delete?')){db.mk.splice(${i},1);save();render()}">🗑</button></div>
+<textarea data-p="mk/${i}/q">${esc(m.q)}</textarea><textarea data-p="mk/${i}/e">${esc(m.e)}</textarea></div>`).join('')||'<p class=mu>Koi entry nahi</p>'}`};
+function addMk(){const q=$('#mq').value.trim();if(!q){alert('Question/topic likho');return}db.mk.unshift({d:$('#md').value||today(),s:$('#ms').value,c:$('#mc').value,t:$('#mt').value,q,e:$('#me').value,st:'Pending'});save();render()}
+// ---- plan
+V.plan=()=>`<h2>Targets & Goals</h2><div class=card><b>Important dates</b><div class=row><label>Start <input type=date data-rr=1 data-p=start value="${db.start}"></label><label>Nov deadline <input type=date data-p=nov value="${db.nov}"></label><label>Dec deadline <input type=date data-p=dec value="${db.dec}"></label></div></div>
+<div class=g>${[['nov','November targets (min/din)'],['dec','December targets (min/din)'],['jan','January targets (min/din) — sample papers']].map(([k,l])=>`<div class=card><b>${l}</b>${S.concat([{k:'r',n:'Revision / Mistake notebook'}]).map(s=>`<div class=row><span class=grow>${s.n}</span><input type=number min=0 style="width:80px" data-p="t/${k}/${s.k}" value="${db.t[k][s.k]}"></div>`).join('')}</div>`).join('')}</div>
+
+<h3>Personal goals / pending tasks</h3><div class=card><div class=row><input id=gi class=grow placeholder="Naya goal ya task"><button class=pri onclick="addGoal()">+ Add</button></div>${db.goals.map((g,i)=>`<div class=row><label class=grow><input type=checkbox data-rr=1 data-p="goals/${i}/x" ${g.x?'checked':''}><input data-p="goals/${i}/t" value="${esc(g.t)}" style="${g.x?'text-decoration:line-through':''}"></label><button class=sm onclick="db.goals.splice(${i},1);save();render()">🗑</button></div>`).join('')}</div>`;
+function addGoal(){const v=$('#gi').value.trim();if(v){db.goals.push({t:v,x:0});save();render()}}
+
+// ---- timer (survives closing), exam journey, sample papers, date sheet
+const TTL=document.title;
+function tmLeft(){const t=db.tm;return t.end?Math.max(0,Math.ceil((t.end-Date.now())/1000)):t.left}
+function tmS(){const l=tmLeft();return p2(Math.floor(l/60))+':'+p2(l%60)}
+function tmTick(){const t=db.tm;if(t.end&&tmLeft()<=0)return tmDone();const a=$('#tmv'),b=$('#tmb');if(a)a.textContent=tmS();if(b)b.textContent=tmS();document.title=t.end?'⏱ '+tmS()+" · ka.p10prince'box":TTL}
+function tmDone(){const t=db.tm,dt=fmt(new Date(t.end)),k='d/'+dt+'/s/'+t.k+'/t';setP(k,(+getP(k)||0)+t.len);setP('d/'+dt+'/focus',(+getP('d/'+dt+'/focus')||0)+t.len);t.end=0;t.left=t.len*60;save();render();tmTick();setTimeout(()=>alert('Session poora! '+t.len+' min diary me add ho gaye 🎉'),300)}
+function tmGo(){const t=db.tm;if(t.end){t.left=tmLeft();t.end=0}else{if(t.left<=0)t.left=t.len*60;t.end=Date.now()+t.left*1000}save();render();tmTick()}
+function tmSet(l){const t=db.tm;t.len=Math.max(1,+l||25);t.left=t.len*60;t.end=0;save();render();tmTick()}
+function stg(){const n=db.ch.length||1,a=(i,j)=>Math.round(db.ch.reduce((x,c)=>x+c.c.slice(i,j).filter(Boolean).length/(j-i),0)/n*100),p=db.sp.length?Math.round(db.sp.reduce((x,q)=>x+(q.a+q.r)/2,0)/db.sp.length*100):0;return[a(0,3),a(3,6),p]}
+function journey(){const g=stg();return[['1️⃣ Syllabus complete (Lecture · Reading · Notes)',g[0],'ch'],['2️⃣ Master karo: important questions (Practice · Revision · Test)',g[1],'ch'],['3️⃣ January sample papers',g[2],'sp']].map(x=>`<div onclick="go('${x[2]}')" style="cursor:pointer">${x[0]} — <b>${x[1]}%</b>${bar(x[1])}</div>`).join('')+(g.every(v=>v>=100)?'<b>🏆 Exam ke liye taiyar!</b>':'')}
+function nx(){const t=today(),a=db.ds.filter(x=>x.d>=t).sort((p,q)=>p.d<q.d?-1:1)[0];return`<div class=card onclick="go('ds')" style="cursor:pointer">📅 ${a?`Agla exam: <b>${esc(a.n)}</b> — ${a.d} (${diff(t,a.d)} din baaki)`:'Exam date sheet'} <span class=mu>→ Date Sheet</span></div>`}
+function addSp(k){db.sp.push({s:k,n:'Sample Paper '+(db.sp.filter(q=>q.s===k).length+1),a:0,r:0,sc:''});save();render()}
+function delSp(i){if(confirm('Ye paper delete karein?')){db.sp.splice(i,1);save();render()}}
+V.sp=()=>{const g=stg()[2];return`<h2>January Sample Papers</h2><div class=card><b>Exam readiness: ${g}%</b>${bar(g)}<small class=mu>Flow: pehle syllabus complete → phir important chapters/questions master → phir sample paper likhkar exam-writing master. Har paper ke 2 tick: ✍ Attempted (time lagakar likha) aur 🔍 Reviewed (galtiyan Mistake Notebook me daali). Score optional.</small>${g>=100?'<br><b>🏆 Sample papers poore — exam ke liye taiyar!</b>':''}</div>
+${S.map(s=>{const L=db.sp.map((q,i)=>[q,i]).filter(([q])=>q.s===s.k),p=L.length?Math.round(L.reduce((a,[q])=>a+(q.a+q.r)/2,0)/L.length*100):0;return`<div class=card style="border-top:4px solid ${s.c}"><div class=row><b class=grow style="color:${s.c}">${s.n} — ${p}%</b><button class=sm onclick="addSp('${s.k}')">+ Paper</button></div>${bar(p,s.c)}${L.map(([q,i])=>`<div class=row><input class=grow data-p="sp/${i}/n" value="${esc(q.n)}"><label><input type=checkbox data-rr=1 data-p="sp/${i}/a" ${q.a?'checked':''}>✍ Attempted</label><label><input type=checkbox data-rr=1 data-p="sp/${i}/r" ${q.r?'checked':''}>🔍 Reviewed</label><input style="width:76px" inputmode=decimal placeholder="Score" data-p="sp/${i}/sc" value="${esc(q.sc)}"><button class=sm onclick="delSp(${i})">🗑</button></div>`).join('')||'<small class=mu>Koi paper nahi — + Paper dabao</small>'}</div>`}).join('')}`};
+V.ds=()=>{const t=today(),L=db.ds.map((x,i)=>[x,i]).sort((a,b)=>a[0].d<b[0].d?-1:1),f=L.find(([x])=>x.d>=t);return`<h2>Exam Date Sheet 2027</h2><div class=card><small class=mu>Ye date sheet tumhari bheji image (PW post) se li hai — CBSE ki official date sheet se ek baar zaroor match kar lena. Date/naam badal sakte ho.</small></div>
+${L.map(([x,i])=>{const n=diff(t,x.d||t);return`<div class=card style="${f&&f[1]===i?'border:2px solid var(--gold)':''}"><div class=row><input class=grow data-p="ds/${i}/n" value="${esc(x.n)}"><input type=date data-rr=1 data-p="ds/${i}/d" value="${x.d}"><b>${n>0?n+' din baaki':n===0?'Aaj! 🍀':'ho chuka'}</b><button class=sm onclick="if(confirm('Delete?')){db.ds.splice(${i},1);save();render()}">🗑</button></div><small class=mu>${DAYN[pd(x.d||t).getDay()]}</small></div>`}).join('')}<button onclick="db.ds.push({n:'Naya exam',d:today()});save();render()">+ Exam add karo</button>`};
+V.tm=()=>`<div class=card style="text-align:center;padding:24px 12px"><div class=big id=tmv style="font-size:58px">${tmS()}</div><div class=row style="justify-content:center;margin:12px 0"><select onchange="db.tm.k=this.value;save()">${S.map(s=>`<option value=${s.k} ${db.tm.k===s.k?'selected':''}>${s.n}</option>`).join('')}</select><select onchange="tmSet(this.value)">${[15,25,30,45,60,90].map(m=>`<option value=${m} ${db.tm.len===m?'selected':''}>${m} min</option>`).join('')}</select></div><div class=row style="justify-content:center"><button class=pri onclick="tmGo()">${db.tm.end?'⏸ Pause':'▶ Start'}</button><button onclick="tmSet(db.tm.len)">↺ Reset</button></div></div>`;
+// ---- backup
+V.bk=()=>`<h2>Backup & Restore</h2><div class=card>Data is browser (localStorage) me save hai. Browser data clear karne se ud sakta hai — <b>hafte me ek baar export zaroor karo.</b></div>
+<div class=card><div class=row><button class=pri onclick="dl('study_backup_'+today()+'.json',JSON.stringify(db),'application/json')">⬇ Export all (JSON)</button><label>⬆ Import JSON: <input type=file accept=".json" onchange="imp(this.files[0])"></label><button onclick="csv()">⬇ Study history (CSV)</button><button onclick="dl('report_'+today()+'.txt',rep(today()))">⬇ Aaj ki report</button></div></div>
+<div class=card><button onclick="reset()" style="color:#dc2626">⚠ Saara data reset</button></div>`;
+function imp(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!x.ch||!x.d)throw 0;if(confirm('Abhi ka data replace ho jayega. Pehle export kar liya? Aage badhein?')){db=mig(x);save();render()}}catch(e){alert('File sahi nahi hai.')}};r.readAsText(f)}
+function csv(){const q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';let o='date,subject,chapter,topic,lecture,ncert,practice,revision,questions,minutes,understood,not_understood,pending\n';Object.keys(db.d).sort().forEach(d=>S.forEach(s=>{const y=(db.d[d].s||{})[s.k];if(sact(y))o+=[d,s.n,y.ch,y.tp,y.l?1:0,y.n?1:0,y.q?1:0,y.r?1:0,y.nq||0,y.t||0,y.u,y.x,y.p].map(q).join(',')+'\n'}));dl('study_history.csv','\ufeff'+o,'text/csv')}
+function reset(){if(confirm('SAARA data delete hoga. Pakka?')&&confirm('Aakhri baar: pehle backup export kiya?')){db=seed();save();render()}}
+db.d[today()]=db.d[today()]||{n:'',s:{}};tmTick();render();
+</script></body></html>
